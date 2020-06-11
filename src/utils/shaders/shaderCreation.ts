@@ -14,7 +14,7 @@ export function createShader(
   let success = gl.getShaderParameter(shader, gl.COMPILE_STATUS);
   if (!success) {
     console.log(
-      '---> Ошибка: компиляция шейдера не удалась:\n' +
+      '---> Error: Shader compilation was not successful:\n' +
         gl.getShaderInfoLog(shader),
     );
   }
@@ -52,5 +52,10 @@ export function createProgramFromShaderSource(
     gl.FRAGMENT_SHADER,
     fragmentShaderSource,
   );
-  return createProgram(gl, vertexShader, fragmentShader);
+  const program = createProgram(gl, vertexShader, fragmentShader);
+
+  gl.deleteShader(vertexShader);
+  gl.deleteShader(fragmentShader);
+
+  return program;
 }

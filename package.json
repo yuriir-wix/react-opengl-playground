@@ -10,8 +10,10 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
+    "expo-asset": "^8.1.5",
     "expo-gl": "^8.2.0",
     "expo-gl-cpp": "^8.2.0",
+    "gl-matrix": "^3.3.0",
     "react": "16.11.0",
     "react-native": "0.62.2",
     "react-native-unimodules": "^0.9.1"
